@@ -1,0 +1,2 @@
+DATA = "Plankton is the greatest nightmare of Bikini Bottom"
+SILENT = True
