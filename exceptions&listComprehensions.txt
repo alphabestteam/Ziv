@@ -1,0 +1,14 @@
+Python Intermediate- Lists, Exceptions
+
+Exceptions
+Exceptions are events or conditions that happen while the program is running and disrupt the flow of the code. Exceptions can arise due to various reasons, such as incorrect input, files that are imported and cannot be found, division by zero, or attempting to access a memory location that doesn’t exist. The idea behind exceptions is to help handle errors in a more elegant way and prevent the program from crashing. Exceptions help with identifying what exactly went wrong: the error type will usually be printed, along with a message. Developers can raise errors manually, like so: 
+if number < 0:
+ raise ValueError("Number must be positive")
+We can also attempt to catch errors with try-except, like so:
+try:
+print( x / 0)
+except ZeroDivisionError:
+	print(“Something went wrong”)
+
+ List comprehensions are a shortened way to create lists. They generate a new list by applying an expression to each item in an existing iterable and then adding it to the new list.Optionally, they can filter the items based on a condition. List comprehensions are often used to transform, filter, or generate lists in a single line of code, making the program cleaner and readable.
+List comprehensions are an optional feature, and developers don’t have to use them. They can use map() and filter() to perform similar tasks. However, list comprehensions have simple syntax and are very clear, making them a preferable technique.
