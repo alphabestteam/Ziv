@@ -1,0 +1,21 @@
+Python- Decorators, generators, and iterators
+
+
+Decorators:
+Decorators are a feature that allows modifications and additions to the behavior of functions without changing their content. These are “wrapper” functions that add some functionality or behavior to the functions which they wrap. Decorators make the code reusable and maintainable. They also help break down and separate different functionalities into smaller tasks. 
+In python, functions can be treated like a data type and can therefore be passed as arguments to other functions. Decorators accept the functions which they wrap as an argument. The decorator is defined using the "@" symbol followed by the decorator function's name. It is placed just above the function which the developer wants to decorate. When the wrapped function is called, it will be decorated and any additions made inside the decorator will apply.
+Since Python is both a dynamically typed and interpreted language, it doesn't have the concept of function pointers. However, Python does have a concept of treating functions as objects and passing them, which resembles functional programming. Python functions are first-class citizens, which means they can be treated just like any other objects.
+Decorators can use *args and **kwargs in the inner wrapper function. These allow decorators to work on functions that take different numbers of arguments/ keyword arguments. These also allow the decorator to work with different functions that accept different arguments.
+We have previously used @staticmethod, which is a class decorator.
+
+Iterators
+An iterator is an object that represents a collection of elements or data. The iterator’s structure allows us to loop over its elements one at a time. Iterators are usually used to traverse through data structures, retrieving each item separately without having to access all elements at once. 
+Three data structures that are iterators are tuples, lists, and strings.
+ The del function can be used in various ways on an object. It can be used to delete an attribute of the object itself. It can also be used to remove elements from mutable objects, like lists or dictionaries that are stored as attributes of the object.
+In order to make an object mutable, the __iter__() and __next__() functions must be inside its class. This will allow us to iterate over the object’s elements. Practically speaking, the __iter__() function will make the object iterable. The __next__() will return the next element of the iteration. 
+
+Generators
+Generators are a special type of function in python that resemble iterators. Unlike regular functions, a generator object doesn’t return values. Instead, it uses the yield keyword to generate items on the fly. Generators also use lazy evaluation, meaning  they produce values one at a time instead of all at once like regular functions. When a generator function is called, it returns a generator object. Values will be generated only when requested using iteration. 
+Generators are far more memory-friendly and suitable for when the code works with large data sequences. Generators produce values lazily, one at a time, making them more memory-efficient. They also allow infinite iterations and can generate data sequences that are unlimited in length.
+Storing generator objects in variables can be useful for multiple reasons. It allows maintenance of the generator’s state throughout many function calls. It also gives us far more control on iterations, allowing us to pause and resume iteration at specific points or perform specific actions before or after each iteration step. It also allows lazy initialization, since the generator is created and initialized only when needed, not when the function is defined. An example of a case when generators should be used is when we want to generate an infinite sequence of numbers, but can’t generate all the numbers at once and store them in the memory. Generating each number as needed with a generator will solve this problem.
+“Yield” is a statement in Python that creates a generator object and can return multiple values to the caller without terminating the program. The function’s run can be temporarily halted, where the state gets saved. Yield differs from a return statement since “return” is used to return a value to the caller from within a function and it ends the function’s run.
