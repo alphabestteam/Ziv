@@ -1,0 +1,33 @@
+Threading + Sockets + Requests + Virtual Environments 
+
+Threads
+A thread refers to a thread of execution in a computer program. In Python, threads, also known as "threading," are a way to achieve parallelism in a program. Threads allow us to run smaller units of a process, simultaneously, within the same process, which allows the code to perform multiple tasks at the same time. Threads enable concurrency and help develop responsive UIs. For example, users can download multiple files at once, speeding up the process, using threading.
+We will use the threading library like so: “import threading”
+The Requests library is a Python module which enables interactions with servers or websites through HTTP requests such as GET, POST, etc. The methods implemented in the Requests library send specified HTTP requests to a specific web server specified by its URL. This can be preferable to using socket when dealing with web APIs and when HTTP security is needed.
+Locks are synchronization mechanisms used to coordinate access to shared resources in order to prevent race conditions and ensure data integrity. When multiple threads are simultaneously accessing and modifying shared data, locks help ensure mutual exclusion. This means that only one thread can access the protected resource at a time. 
+
+Sockets
+Socket programming is a way to connect two nodes on a network to communicate with each other. In Python, this is done with the socket library, which enables client-server communication. One socket listens on a particular port at a specified IP, while the other socket reaches out to the other to form a connection. The server is the listener socket while the client reaches out to the server.  Since sockets are more low-level, there are situations when not using them is preferable, due to complexity, performance considerations, or the specific requirements of the project. Some high-level alternatives, such as Requests, gRPC, or RESTful APIs can prove to be more convenient.
+Client/Server communication generally involves two components, a client and a server. Usually, there are multiple clients in communication with a single server. The clients send requests to the server and the server responds based on the request. The following are the steps to establishing client server communication with socket:
+Importing the socket module
+Creating a socket: socket.socket() 
+Bind the socket on the server side with the bind() function- this will allow clients to  connect to the server
+Use the listen() function to listen on the server side
+Use accept() to accept client connections on the server side
+On the client side, use connect() to connect to the server
+The function send() and recv() can be used to communication between the two sides
+The sockets can be closed with the close() function
+The first socket parameter is the address family, which specifies the address family. The options for this are ‘AF_INET’ for IPv4,  ‘AF_INET6’ for IPv6, or ‘AF_UNIX’/’AF_LOCAL’ for Unix domain sockets.  The second parameter is the socket type, which can be ‘SOCK_STREAM’ for a TCP socket or ‘SOCK_DGRAM’ for a UDP socket.
+
+
+Virtual Environments
+
+Virtual environments are a way to create separate and self-contained environments for software development. The main purpose of virtual environments is to manage all the dependencies needed for a project and to isolate project-specific libraries and modules. This is useful for many reasons, including sandboxing- any “experiments” and installed packages in the virtual environment will not affect the outer system. Moreover , in terms of portability, virtual environments can be moved across different systems.
+ A virtual environment works by creating an isolated and self-contained environment in which project-specific dependencies, libraries, and packages can be installed and managed. The virtual environment uses a copy of the Python interpreter from the main system and an isolated library directory.
+Steps to creating a virtual environment:
+Install virtualenv using the terminal with the command ‘pip install virtualenv’
+Navigate to the directory where you want to create the virtual environment
+Create a new virtual environment with the command ‘virtualenv environment_name’
+Activate the environment with the command ‘environment_name\Scripts\activate’
+	You can also use venv with the command ‘python -m venv environment_name’, followed by environment_name\Scripts\activate 
+This does not work since virtual environments don’t come with the dependencies needed for the code to run, and therefore doesn’t have the needed threads library.
