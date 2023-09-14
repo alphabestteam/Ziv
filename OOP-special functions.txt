@@ -1,0 +1,11 @@
+Python OOP Special functions
+
+Magic or special functions, also known as dunder, are double underscore methods. These functions are automatically defined in and can be invoked by the Python interpreter in response to certain operations. They allow developers to define how the instances should behave when used with built-in operators or functions. An example of this is __init__, which is the constructor method in the class. Another example is __str__ which, when str() is called on an object, returns a string representation of the object. Similarly, __len__ returns the length of the object when len() is called. Finally,  __iter__ returns an iterator object so that you can “run” on the elements of the object.
+
+If the __str__() method is not defined, Python will use the default behavior for object comparison, which is based on the object's memory addresses. In other words, two objects of the same class will only be considered equal if they are the same instance in the memory, meaning they reference the same object.
+
+If the __eq__() method is not defined, Python will use the default behavior in order to compare the objects, which is based on the objects’ memory addresses. Two objects of the same class will only be considered equal if they reference the same object, but not necessarily if their content is the same.
+
+Operator overloading is a feature in OOP that enables custom definitions for behaviors of operators when combined with instances of classes. Operator overloading is achieved by defining special/magic functions inside the class.
+
+In regards to what happened in the code prior to defining the magic functions, there were errors in every command since the operators did not work as expected with the object. When trying to compare them, Python compared their memory addresses. The same thing happened when attempting to print them- their memory addresses were returned instead. Adding them also didn’t work, and a TypeError was thrown, saying “+” cannot work on objects of type Point. 
