@@ -1,0 +1,33 @@
+Python – Imports, Enums and Classes
+
+IMPORTS
+Import is a statement which enables access to separate files and python modules. Imported modules will be declared at the top of the code and from there on will be available to use, as if directly written in the file. This is useful when we want to use other libraries and modules, like math and random, or when we want to separate our code to multiple files.
+The path that will follow the import statement will be relative to the file that we are importing models to. Meaning, if the wanted module is in the same file as the source file, we only have to include the module’s name. When the module is in a separate subdirectory or sibling directory, the relative path must also include the directories. Absolute paths can be used but they make the code harder to transport. 
+The if __name__ == “__main__” statement  ensures that the file can only be run directly. When the interpreter runs a module, the __name__ variable will be set as  __main__ if the module that is being run is the main program. This actually doesn’t allow for modules to be imported, since they are not run directly.  
+
+
+CLASSES
+In OOP, classes are essentially a template upon which objects are built. The class contains the attributes and methods that its objects will have. 
+Classes are a very useful tool for developers. Classes enable code reusability, using inheritance  and composition. Classes also  encapsulate attributes and methods into a single uni, which helps hide the internal details of an object and exposes only the necessary functionality. This reduces the code’s complexity and prevents unauthorized access to data, improving data security. Classes also help make the code cleaner and more organized, mostly because of their data grouping and hierachy. They are preferred to simple variable creation since they group together relevant data. It is also easier to access said data and control the values that it can hold. 
+A class attribute is a shared characteristic in the form of a variable. It is associated with a class rather than with objects of that class. Class attributes are shared among all objects of the class. They are defined within the class but outside of any methods. Class attributes store data that is common for all the objects.
+A class object is an instance of a class that represents the class itself. The class is used as a blueprint which the object is modeled after. Class objects can be used to access class attributes, create instances of the class, and perform various operations related to the class.
+A constructor is a class method used for initializing objects when they are created. It is called automatically when an instance of a class is created. The constructor sets up the initial state of the object, usually by initializing its attributes. A destructor is a method that is used to clean up resources or perform other actions just before an object is destroyed or goes out of its scope. Unlike constructors, destructors are not as often used in many programming languages, and not all languages provide explicit support for destructors.
+“Self” is a common convention in programming languages, including Python, that references the current instance of a class within its methods. The use of self allows one to use and manipulate the attributes and methods of the object when defining the class.
+Inheritance is a mechanism that allows the creation of a subclass by inheriting the properties (attributes and methods) of an existing class (called a superclass or base class). The subclass can then extend or modify the behavior of the superclass or add new functionality.
+Polymorphism is a characteristic of objects of different classes which allows them to be treated as objects of one common class. It allows developers to write code that can work with objects of various types without needing to know their specific classes, which enables code reusability and implementation in many platforms. Polymorphism is typically achieved through overriding of methods and interfaces (in some languages). 
+A static function is a function that is associated with a class rather than with objects of the class. It is called on the class itself, not on an object created based on the class. Static methods are usually used for utility functions that are not tied to the state of individual objects, which is essentially what makes them static. When defining a static method, we will do so like this: 
+class Greetings:
+ @staticmethod
+ def add():
+ return “Hello”
+A keyword or statement is used to define a method as static. For example, in Python this will be @staticmethod.  We can also do it like this: staticmethod(Class_name.method_name). This will be written in the main part of our code when calling the function.
+A static attribute AKA a class variable, is a variable that is associated with a class rather than with objects of the class(similarly to static methods). It is shared among all objects of the class and represents data that is common to all instances. A static attribute is typically defined inside the class but outside of any methods or objects, like so:
+class Greeting:
+static_variable = “Hello”
+…
+ def __init__(self, variable):
+The static keyword must be placed before the variable name
+
+ENUMS
+Enums (enumerations) is a data type that groups and defines a set of constant variables. These constant values represent a limited set of options for a particular variable or property. Any option that is not included in the enum will not be accepted.
+ In some cases, enums are preferable to regular variables. They make the code more readable, maintainable, and self-documenting. They also give type-safety: they have a specific data type associated with them, which helps catch type-related errors. Enums also help in eliminating magic numbers, which adds to the readability and elegance of the code. 
