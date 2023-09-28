@@ -1,0 +1,28 @@
+HTML - Intro
+
+
+BASICS:
+HTML stands for HyperText Markup Language:
+Markup language: a computer language that defines the structure and presentation of data.
+HyperText: text displayed on a computer that provides access to other data through hyperlinks.
+With HTML, the computer can interpret regular text that is wrapped in HTML elements.
+HTML is mainly used for web-building and full stack development.
+STRUCTURE:
+HTML is composed of elements. These elements give structure to the webpage and label its content.An HTML element consists of three parts: an opening tag, a closing tag, and data that is encased between the two.
+The tags label the information encased between them based on its type. There are many tags in HTML, i.e <p> which means paragraph. The opening and closing tag of an element must be of the same kind. Also, the closing tag must have a ‘/’ at its end, like so: </p>. 
+Note: the <body> tag is the only tag that allows information to be presented on the screen.
+HTML uses a hierarchical structure. The nesting of elements determines how they are on this hierarchy. When an element is contained inside another element, it is considered to be the child of that element. The element that contains another element is considered a parent element. Elements can be both parents and children.
+HTML also allows headings in order to title information visibly to the user. HTML has six elements for headings: <h1></h1>, with the number ranging from one to six. These vary in size, with one being the largest and six the smallest.
+Note: the element <div>,  short for “division”, is used as a container that divides the webpage into sections. These sections are very useful for grouping specific elements together. Said sections aren’t visually represented, but are useful when applying changes to multiple elements. 
+Attributes: additional content in the opening tag of an element that can provide more information or help in changing the element’s styling. Attributes are made up of the name and value of the attribute. Some common attributes are id and class.
+Comments can be written like so: <!-- Comment -->
+TAGS
+The <body> tag is the only tag that allows information to be presented on the screen.
+The <p> and <span> can be used to contain blocks of text. The paragraph tag is used for larger blocks. 
+The <em> tag renders as italic emphasis, while the <strong> tag renders as bold emphasis.
+The <br> tag is used to split a line. 
+The <ul> tag can be used to create a list of items in no particular order. Each list item is marked with a bullet point.  Individual list items must be added to the list using the <li> tag. Moreover, one can create an ordered list with the <ol> tag.
+ The <img> tag adds an image to the webpage. This tag is self-closing, meaning it doesn’t  require a closing tag. Its format is like so: <img src = "image_url" />. The src attribute must be set to the location of the image. The alt attribute can be used to add a caption.
+The <video> element can be used to add videos. It requires a src attribute with a link to the video source and a closing tag. Its format is like so: <video src="myVideo.mp4" width="320" height="240" controls></video>.
+Links to other webpages can be added like so: <a href="web_page_url">Press here to go to the linked page</a>. The target attribute can be used to determine how the links will be open. For example, the “_blank” means the link will be opened in a new window. The href attribute can also accept a file path to link pages relatively. 
+HTML allows one to turn any element into a link by wrapping that element with an anchor element. It’s possible to turn images into links by simply wrapping the <img> element with an <a> element. Scrolling in the page can also be mimicked with links. In this case, the href attribute will point to the id of another element.

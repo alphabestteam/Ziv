@@ -1,0 +1,39 @@
+CSS Intro
+
+INTRO
+CSS, short for Cascading Style Sheets, is a language used to style the HTML content on a web page. This includes colors, font types, font sizes, images, element positioning, and more.
+There are three types of CSS: internal, external, and inline. With internal CSS, a single HTML file can be styled uniquely. The CSS is written inside the file’s head section, within the <style> tag . With external CSS, the CSS is written in separate files that can be linked to the HTML. This is especially useful when the style rules are applied to multiple HTML documents.  Inline CSS is specified within an HTML tag using the style attribute.
+External CSS can be lined like so: <link href=’file_path' rel=relationship_between_files>
+Selector - a keyword in the CSS used to target the specific HTML element(s) to be styled by the declaration. 
+The * selector can be used to target all the elements in the file. The class attribute can also be used to 
+
+Pseudo-class: can be used to give elements a different stat, using  factors such as user interaction, site navigation, and position in the document tree.
+A pseudo-class can be attached to any selector. It is always written as a selector and colon followed by an action. 
+Specify: the order by which the browser decides which CSS styles will be displayed. IDs are the most specific selector in CSS, followed by classes, and finally, type. Increases with additional selectors.
+Chaining- combining multiple selectors.Multiple selectors can be chained together to select an element. This raises the specificity but can be necessary.
+
+
+Descendent combinator-  selecting elements that are nested within other HTML elements, also known as descendants.
+!important - a keyword that can be applied to specific declarations, instead of full rules. It will override any style no matter how specific it is. 
+BOX MODEL
+ A concept that explains how elements are positioned and displayed on a website.All elements on a web page are interpreted by the browser as contained by a box.
+The four properties of the box model are height and width, padding, borders, and margins.
+Note: the total space between the borders of adjacent elements is equal to the sum of the right margin of one element and the left margin of the adjacent element.
+Note: Vertical margins collapse, so the space between vertically adjacent elements is equal to the larger margin.
+Overflow- defines the behavior of content that overflows out of a containing element.
+Visibility- showing or hiding elements. 
+In the default box model, box dimensions are affected by border thickness and padding.The value for the new box model is border-box, which isn’t affected by border thickness or padding.
+LAYOUT
+Five properties for adjusting the position of HTML elements in the browser: Position, Display, Z-index, Float, clear
+Position: specifies the position-behavior of an element: relative, absolute, static, fixed or sticky
+Z-index: In case an element overlaps other elements, how far back or forward it is placed. 
+Display: specifies how an element flows vertically or horizontally: inline, block, inline-block, float, or clear.
+COLOR
+Color can take on named values, hex values, rgb or hsl
+Hex values always begin with # followed by six digits.
+RGB colors use the rgb() syntax with one value for red, one value for blue and one value for green.
+HSL stands for hue (the color itself), saturation (the intensity of the color), and lightness (how light or dark a color is).
+Opacity can be added to both rgb and hsl (rbga and hsla)
+
+
+
