@@ -1,0 +1,40 @@
+{
+    "People_JSON": {
+      "Patrick Star": {
+        "Age": 20,
+        "Cars": [
+          {
+            "Price": 100000,
+            "Year_of_release": 1995,
+            "Horse_power": 500,
+            "Max_speed": 230,
+            "Cylinders_num": 6
+          },
+          {
+            "Price": 2000,
+            "Year_of_release": 2003,
+            "Horse_power": 80,
+            "Max_speed": 120,
+            "Cylinders_num": 2
+          }
+        ]
+      }
+    },
+      
+    "Cities": [
+      {
+        "Name": "Tel Aviv",
+        "Time_zone": "IDT",
+        "Zip_code": "6195001",
+        "Population": 8398748,
+        "Year_established": 1312,
+        "Mayor_of_city": {
+          "Age": 43,
+          "Year_elected": 2021,
+          "Yearly_salary": 150000
+        }
+      }
+    ]
+
+}
+  
