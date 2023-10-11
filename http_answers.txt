@@ -1,0 +1,31 @@
+HTTP Web Dev
+
+The IETF, which stands for Internet Engineering Task Force, is a group of network researchers and developers. Their main purpose is defining universal internet standards and protocol. They  are responsible for standardization, internet governing and controlling operations and more.
+ A communication protocol is a grouping of conventions that defines behaviors for how devices and systems can “converse”. Any factors that may regard data exchanging are defined by communication protocols. Some examples include TCP, HTTP and IP. 
+ RFCs, or Request for Comments, is a series of documents that details standards that were defined by the IETF. They cover various subjects like security, communication protocols, and network management and handling.
+HTTP, or Hypertext Transfer Protocol, is mainly used in data exchange between a client and server (for example, we browsers). Through the protocol, one side can send a request (posting, getting, or updating data) and the receiving side will respond accordingly.
+HTTP differs from HTTPS mainly in that HTTPS is far more secure, with data being encrypted before transmitted. In contrast, HTTP transfers data in plaintext and is therefore vulnerable. Both HTTP and HTTPS operate on top of the TCP/IP which is the basis of internet communication. SSL and TSL are both cryptographic protocols. Combined with HTTP, the protocol is then called HTTPS, with the latter being the more secure, and but not necessarily more common, protocol.
+The model on HTTP is based on a request-response pattern that uses methods (like GET, POST, etc.) and headers in the response and status codes(like 404- not found) in the responses. For every request sent by the client, the server constructs and sends the proper response. 
+
+
+User agent- an HTTP header in the client’s request. This field contains information about the user’s web client (like the operation system type or version). 
+ Web server- is an application or hardware device that contains and serves web resources in response to HTTP requests from connected clients. Web servers receive requests, process them and give service accordingly.
+Proxies - a server that is like a “middleman” between a client and web server. The proxy sits between the two and handles request and response transferring.
+Proxies hold various responsibilities, being intermediaries between servers and clients. They filter content and restrict access to specific websites. They improve the performance- faster response time and reduce server load. They also ensure privacy (hiding the client’s IP address).
+The state of a protocol references  the maintenance of information about the current status of a communication session  between devices. Protocols with state keep track of where they are in a sequence of actions or messages, which make the data exchange more orderly.
+HTTP is a stateless protocol and does not maintain information about previous interaction.
+Flow of HTTP: 
+A client’s request is sent.
+ DNS- the domain name is resolved to the IP address
+A TCP connection is established
+An HTTP request is sent
+The server processes the request
+The server generates an HTTP response
+TCP delivers  the response
+The client side processes the response
+The TCP connection is closed
+ Request headers are a field inside the HTTP requests. They contain information about the request, like accepted content type for the response or user-agent information.
+ Cookies are data or text that the web server sends to the user’s web browser. The browser uses them to store information about the current communication session. Cookies have very legitimate and useful purposes, but are also known for raising privacy issues. 
+ The HTTP request is generally composed of the following: an HTTP method (GET,  POST, etc.), a request URL, a request header and optionally data. 
+The HTTP response is generally composed of the following: an HTTP response status (like 200- OK), a response header and a response body. 
+HTTP/3 is a well-known version of HTTP. The main difference between the two is that HTTP/3 uses the Quick UDP Internet Connection while HTTP2 uses TCP. Because of that, HTTP/3 is more efficient in prioritization. HTTP/3 is also more secure, using TLS, and also has its own flow control. Overall, HTTP/3 offers significant benefits and improvements. 
