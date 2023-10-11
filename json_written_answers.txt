@@ -1,0 +1,35 @@
+JSON
+
+JSON is a data format that is both easy for humans to read/write in and  easy for computers to parse and generate. 
+A JSON object is a data structure that’s used to store and transport data. It is stored in a key-value format. 
+There are many “objects” in other languages/programming environments. In Python for example, there are maps, dictionaries, tuples and OOP. In C, objects are called structs. Databases also have objects, called records or rows (the records in a database table).
+The “ordered list of values” used in JSON is also used in other environments and programming languages.  In Python for example, there are lists and dictionaries. In C, C++, Java and JavaScript there are arrays. 
+JSON supports strings, numbers, boolean, arrays, objects and null as values.
+In JavaScript, JSON values can be strings, numbers, boolean, arrays, objects and null as values.
+The values that don’t need quotes are numbers, boolean, arrays, objects and null.
+JSON can contain an empty string, which is the minimal size for a string.
+In JSON, keys are an identifier inside the JSON object that labels a value. It is essentially a property name.
+They are supported as values.
+Yes
+Yes
+Yes
+ JSON is not a traditional file format, but rather a data interchanging format. It is actually text-based and used to structure and transport data.
+JSON stands for JavaScript Object Notation. 
+JSON files have a “.json” file extension. 
+In JSON, data is separated using commas between every key value pair. All the pairs are encased in curly brackets. 
+Square brackets hold lists in JSON.
+Curly brackets are used to hold objects in JSON.
+Yes.
+The difference between json.parse() and json.loads() is that json.parse() receives a JSON-formatted string as input and converts it into a JavaScript object. In contrast, json.loads() receives a JSON-formatted string as input and converts it into a Python object.
+XML is a text-based data format that helps represent and structure data. It’s usually used for data structuring and interchange between different systems. Some of its downsides are its complex syntax, verbosity and the fact that it doesn’t support a variety of data types.
+Major differences between XML and JSON
+ XML uses tags to organize information, while JSON uses key: value pairs
+Structure-wise, XML has a hierarchical/ tree build, while JSON’s structure is more like objects
+XML does not support native types( all data is text), and JSON supports many data types i.e strings, numbers, booleans and more.
+ Examples for when you should use JSON:
+  Configuration files
+Transmitting data in web applications
+Web APIs
+Added file
+ I think you can use json.parse. It will take the JSON string and turn it into a JavaScript object. Then, you can access the name at the first index
+Bonus: Red hood
