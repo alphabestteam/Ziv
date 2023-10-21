@@ -1,0 +1,41 @@
+Django Migrations
+
+IntegerField
+
+
+Changes to the baseSalary field:
+baseSalary = models.IntegerField(
+max_digits = 6,
+decimal_places = 0;
+ validators=[ MinValueValidator(0),
+ MaxValueValidator(999999),
+ ]
+ )
+ python manage.py makemigrations people --empty
+
+Open the new migrations file that has been created. The following is what I wrote in my migrations file:
+from django.db import migrations
+
+
+def round_and_convert_base_salary(apps, schema_editor):
+    Parent = apps.get_model('people', 'Parent')
+    for parent in Parent.objects.all():
+        parent.baseSalary = round(parent.baseSalary)
+        parent.save()
+
+
+class Migration(migrations.Migration):
+
+
+    dependencies = [
+        ('people', '0004_rename_salary_parent_basesalary_and_more'),
+    ]
+
+
+    operations = [
+        migrations.RunPython(round_and_convert_base_salary),
+        migrations.RunSQL("ALTER TABLE people MODIFY COLUMN baseSalary INTEGER;"),
+    ]
+py manage.py makemigrations
+py manage.py migrate
+Run the server with ‘py manage.py runserver’ and check with postgres
