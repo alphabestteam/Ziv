@@ -1,0 +1,17 @@
+Django QuerySet
+
+py manage.py loaddata people_fixture.json
+I added models.py since I had to make alterations for it to fit the fixture file
+
+from people.models import Parent; [print(parent) for parent in Parent.objects.values()]; 
+ from people.models import Parent; count = Parent.objects.filter(work='Google').count(); print(count)
+from people.models import Parent; from django.db.models import Min; [print(parent) for parent in Parent.objects.values().annotate(oldest_child_age=Min('children__birthDate')).order_by('oldest_child_age')];
+from people.models import Person; [print(person) for person in Person.objects.filter(name__icontains='i')]
+from people.models import Person; from django.db.models import Q; [print(person) for person in Person.objects.filter(Q(homeTown='Raanana') | Q(homeTown='Tel Aviv'))]
+from people.models import Parent; from django.db.models import Avg; print({'Average Base Salary': Parent.objects.aggregate(average_base_salary=Avg('baseSalary'))['average_base_salary']})
+from people.models import Parent; [print({parent.name: parent.children.count()}) for parent in Parent.objects.all()]
+from your_app.models import Parent; from django.db.models import Count; print({'Child Count': Parent.objects.annotate(child_count=Count('children')).aggregate(total_children=Sum('child_count'))['total_children'] or 0})
+from people.models import Parent; print(Parent.objects.order_by('-baseSalary').first())
+from people.models import Person; children = Person.objects.filter(parents__baseSalary__gte=50000).distinct(); [print(child) for child in children]
+
+
