@@ -1,0 +1,41 @@
+RDF EX1
+
+Requests
+You can parse data from the given request easily when passing the request as a parameter to the function. That way, the information in the request can be accessed as ‘request.data’ and will return the parsed data. 
+Query parameters are additional data passed through URLs to web servers. The can be used for filtering records from the DB based on the query parameter. The can also be used for authentication and customizing the APIs behavior.They are marked with question marks in the URL. 
+Both HttpResponse and Response are classes in Django. However,  HttpResponse is primarily used for traditional server web pages, and Response is for building API responses in Django Rest Framework. Moreover, DRF’s Response automatically serializes the data, while HttpResponse doesn’t have this capacity. 
+Class and Function based views are two ways to define views in Django. 
+
+Views
+Function-based views are essentially Python functions that take an HTTP request and return an HTTP response. Class-based views are more thorough and complex views definitions in Django. Such views use Python classes that provide a variety of methods to handle HTTP methods like GET,  POST,  UPDATE and more. Class- based views should usually be used for traditional CRUD functions which can be bunched together. Function based views, which address more specific functionalities, can be defined separately. 
+Function based views use conditionals to handle different HTTP methods. The function will include different if/else statements to address the possible HTTP methods, if multiple ones can be accepted, or handles cases where an invalid method has been requested.  
+
+Serializers 
+The .save() can either create a new object or update an existing one.  This depends on whether or not an existing object was passed to the serializer class. For example, ExampleSerializer(example, data=data)will update the example object. If this parameter was omitted, a new one would have been created.
+When validating data that has been passed through  serializer, some error may arise. They can be accessed with the .errors property , which contains a dictionary of the resulting error messages. For example,’return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)’ will print to the client the errors.
+The line serializer.is_valid(raise_exception=True)  raises an exception if the data being validated by the serializer is not valid. Personally, I find that this method is very useful, since it centralizes all the exception handling and doesn't require a lot of extra code. However, checking validity without exception handling offers more control over the flow of the program.
+Serializers accept values for all required fields, otherwise validation errors are raised. However, the partial argument can be passed in order to allow partial updates. For example, serialized_book= BookSerializer(book, data = {‘publication_house’ : 'Simon & Schuster’}, partial=True). The data can be passed normally in a POST request, with the updates represented as a JSON. 
+ The ‘depth’ option in the Meta class of the serializer is used to determine the depth of nested serializations. The field will always contain an integer and specify how many levels deep the serializer should add related objects when serializing the main object. 
+Read-only fields are fields that cannot be edited. They can be specified using the ‘read_only = True’ attribute or by declaring a tuple called read_only and adding fields as elements. 
+The serializerMethodField is a type of read-only field. The value of this field derives from calling a method of the same serializer class that the field belongs to.
+
+Serializer Relations 
+ The SlugRelatedField is used to represent the target of the relationship using a field on the target.  This is a read-write field by default. It must receive a unique identifier of an existing object. Adding the read_only attribute and setting it to True must happen if there is no explicitly-set query in the relationship.
+Select_related and prefetch_related are both options that can be specified in the serializer. Select_related fetches related objects in one SQL query using JOIN. Prefetch_related also retrieves related objects, but uses separate queries. It is for cases like many-to-many and reverse foreign key cases. 
+ In order to return the wanted User and all of their messages( including descriptions of each message), one needs to serialize the User. In DRF, when one defines a nested serializer for a many-to-many field (the User serializer), there’s no need to iterate over each related object from the Messages model to serialize it. DRF handles this automatically, and it will return a list of JSON representations of the messages. 
+
+from rest_framework import serializers
+from .models import User, Message
+
+
+ class MessageSerializer(serializers.ModelSerializer):
+ 	class Meta:
+ model = Message
+ fields = '__all__'
+
+class UserSerializer(serializers.ModelSerializer):
+ 	messages = MessageSerializer(many=True, read_only=True)
+ 	class Meta:
+ 	model = User
+ 	fields = '__all__'
+ Writable nested serializers allow us to work with objects of related models through nested representation inside the serializers. When you have a case of inheritance between models, handling the data for both the parent and child models in a single API request can be done using writable nested serializersNested serializers are, defaultly, read-only. Supporting write-operations to a nested serializer field require create() and/or update() methods. This allows explicit specification of how the child relationships should be treated (updating and saving, for example).
