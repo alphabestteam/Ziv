@@ -1,0 +1,8 @@
+NGINX
+
+NGINX is a web server that can double as a reverse proxy. It is known for its high performance and scalability. It is a free and open-source software, published in 2004. It also helps in load balancing, TLS/SSL encryption handling and termination, and provides a caching mechanism.
+Advantages:
+ Since it’s also a reverse proxy, it sits in front of web servers. Therefore, Nginx can protect backend servers, protecting against attacks and any external threats, serving as a security barrier. 
+ NGINX is very high performing, handling a large number of connections efficiently. It can handle high-traffic websites.
+ NGINX has caching capabilities, which reduces the load on backend servers and makes NGINX’s performances more efficient (improves response times).
+ 
