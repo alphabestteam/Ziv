@@ -1,0 +1,4 @@
+How to add an application:
+
+1. I downloaded the sample file and added it to the 'webapp' folder at this path 'C:\Users\zivss\Documents\apache-tomcat-10.1.15\webapps'. Once I refreshed and ran the server, the app was accessible with the server and appeared in the application list.
+2. I downloaded the sample file and went to the Tomcat Web Application Manager in the tomcat webpage. There is an option there to deploy war files. I selecte dthe path of the sample folder and pressed 'Deploy'. The app then became accessibble.
