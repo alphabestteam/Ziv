@@ -1,0 +1,15 @@
+Tomcat Beginning
+
+The term we application is a software that runs on the web server. It is stored on a remote server and delivered over the internet through a web browser. They make the user’s interaction with the web server more dynamic and interactive, and offer some sort of service (internet forms, online shopping cart, etc)
+A web server is a software or hardware that is the main factor in the communication between web apps and websites. They communicate using HTTP and deliver content and functionality based on user requests.
+Web servers have a variety of usages: they are responsible for content delivery and can serve as the backend for web-based APIs . Their main purpose is hosting websites and bridging the gap between users and web applications. Web applications rely on web servers to deliver dynamic content to users. The applications process the user’s input and communicate with the db. Anything that is passed on to the user goes through the web servers.
+A Java Servlet is a Java-based software component that allows us to create dynamic web applications and extend the abilities of a server. They provide a server-side solution for developing web-based applications.
+Apache Tomcat is a free, open-source web server that was developed by the Apache Software Foundation. It can run Java Servlets and JavaServer Pages.
+ 
+	Advarages:
+It is open source, so different distributions can be created and published, and customization is possible. 
+It is compatible with many platforms, like Linux, Windows, and MacOs
+Disadvantages 
+ It is a lightweight platform, making it lag behind performance-wise.
+Its configuration is very complicated and verbose.
+
