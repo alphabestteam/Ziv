@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Me!</title>
+</head>
+<body>
+    <label for="grade">Enter your grade: </label>
+    <input type="text" id="inputGrade">
+    <button onclick="calculateGrade()">Reveal Grade</button>
+    <script>
+        function calculateGrade() {
+            /*
+             The function receives a grade
+             The function prints a matching message
+            */
+            var gradeInput = document.getElementById("inputGrade").value;
+            var existingResultElement = document.getElementById("result");
+            //This is in case a message has already been printed
+            if (existingResultElement) {
+                existingResultElement.parentNode.removeChild(existingResultElement);
+            }
+
+            var resultElement = document.createElement("p");
+            resultElement.id = "result";
+            document.body.appendChild(resultElement);
+            var grade;
+
+            switch (true) {
+                case gradeInput == 100:
+                    grade = "Perfect! You got an A+ ";
+                    break;
+                case gradeInput === "A" || (gradeInput >= 90 && gradeInput <= 99):
+                    grade = "Amazing! You got an A ";
+                    break;
+                case gradeInput >= 80 && gradeInput <= 89:
+                    grade = "Nicely done! You got a B ";
+                    break;
+                case gradeInput >= 70 && gradeInput <= 79:
+                    grade = "This is fine! You got a C";
+                    break;
+                case gradeInput >= 60 && gradeInput <= 69:
+                    grade = "You can do better! You got a D";
+                    break;
+                case gradeInput >= 50 && gradeInput <= 59:
+                    grade = "A retest an option!You got an E";
+                    break;
+                case gradeInput < 50 && gradeInput >= 0:
+                    grade = "A retest is a must! You got an F";
+                    break;
+                default:
+                    grade = "Invalid grade";
+                    break;
+            }
+
+            resultElement.textContent = gradeInput + ": " + grade;
+        }
+    </script>
+</body>
+</html>
