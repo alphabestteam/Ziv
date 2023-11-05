@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rescue Bob</title>
+</head>
+<body>
+
+<h1>Bob has been kidnapped. Patrick, you must go on a quest to save him.</h1>
+
+<button id="Button">Start Quest</button>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("Button").addEventListener("click", bobQuest);
+
+function bobQuest() {
+    let quest_confirm = "NO";
+    while (quest_confirm !== "YES") {
+        quest_confirm = prompt("Patrick, will you go on a quest? YES/NO", "YES");
+    }
+    alert("Congratulations! Let's find him");
+    let find_bob = prompt("Did you find Bob? YES/NO", "YES");
+    while (find_bob != 'YES') {
+        find_bob = prompt("Did you find Bob? YES/NO", "YES");
+    }
+    document.getElementById("demo").innerHTML = "Quest complete";
+}
+</script>
+
+</body>
+</html>
