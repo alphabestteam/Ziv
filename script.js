@@ -1,11 +1,16 @@
-function addEvent() {
+function createCounter() {
     const button = document.getElementById("my-button");
     const buttonCounter = document.getElementById("counter-display");
     let buttonClicksNumber = 0;
-    button.addEventListener("click", function() {
+  
+    function closure() {
+        //Inner function that's triggered when the button is clicked
         buttonClicksNumber++;
         buttonCounter.textContent = buttonClicksNumber;
-    });
- 
-}
-addEvent();
+    }
+  
+    button.addEventListener("click", closure);
+  }
+  
+  createCounter(); 
+  
