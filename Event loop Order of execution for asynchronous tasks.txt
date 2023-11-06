@@ -1,0 +1,12 @@
+Event loop Order of Execution for Asynchronous Tasks
+
+Order of printing: Bob, Sponge. The questionA function calls for sequenceA(), where there’s a setTimeout with a delay of 0 milliseconds. This means that the print statement is scheduled to be printed as soon as possible, but it's still asynchronous. ‘console.log("Bob")’ is a synchronous action, and it will be executed immediately when the JavaScript engine encounters it.
+
+Order of printing: 🍍 Promise at B, 🍅 Timeout at B.  The questionB function calls for sequenceB(), where there’s a setTimeout with a delay of 0 milliseconds and a Promise block. Both setTimeout and the Promise block are set to run as soon as possible and are asynchronous. Promises have a higher priority in the event loop than setTimeout callbacks, and will generally be printed first.
+
+Order of printing: 🍍 Promise at C, 🍅 Timeout at C. The questionC function calls for  sequenceC(),  which has a  setTimeout with a delay of 0 milliseconds and a Promise block with another setTimeout inside. Both the external setTimeout and the Promise block are scheduled to run as soon as possible,  but the internal setTimeout has a 1000ms (1 second) delay.The ‘🍍 Promise at C’ is synchronous, because of console.log , and so it’s executed immediately and then scheduled by the inner setTimeout with a 1000ms delay. Since ‘🍅 Timeout at C’ is asynchronous, it will be printed second.
+
+Order of printing: Sponge, Bob, Pants, Square. The questionD function calls for  sequenceD(), in which "Sponge"  and "Bob” are synchronous, meaning that they will be executed first. “Sponge” will be printed before “Bob” since it comes first in the code. After that will come “Pants” and finally “Square”. Both are asynchronous and will come after the synchronous actions. Since “Pants" is inside a Promise, the event loop will prioritize it over the setTimeout .
+
+Order of printing: 🍍 Promise at B, 🍍 Promise at C, 🍅 Timeout at B, 🍅 Timeout at C. 🍍 Promise at B and 🍍 Promise at C are both prioritized by the event loop as Promises, and will therefore be printed before the setTimeouts. As for why B comes before C, both on the promises and in the setTimeouts, it is because sequenceB is called before sequenceC inside the questionE function.
+
