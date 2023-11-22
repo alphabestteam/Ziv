@@ -10,21 +10,16 @@ export class AppComponent {
   showDetails = false;
   buttonClicks: { timestamp: string }[] = [];
 
-  displayDetails() {
-    if (this.showDetails){
-      this.showDetails = false;
-    }
-    else{
-      this.showDetails = true;
-    }
-
+  displayDetails(): void {
+    this.showDetails = !this.showDetails;
+  
     this.buttonClicks.push({
       timestamp: this.clickTimestamp()
     });
   }
 
   clickTimestamp(): string {
-    const current_time = new Date();
-    return current_time.toString();
+    const currentTime = new Date();
+    return currentTime.toString();
   }
 }
