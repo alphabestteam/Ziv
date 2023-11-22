@@ -1,0 +1,27 @@
+<app-warning-alert></app-warning-alert>
+<app-success-alert></app-success-alert>
+
+<h1 id="title">Warning and Success Messages</h1>
+
+<select id="selector" [(ngModel)]="selectedNumber">
+  <option *ngFor="let number of numbers" [value]="number">{{ number }}</option>
+</select>
+
+<div class="button-container">
+  <button mat-raised-button color="primary" (click)="onButtonClick(true)">Success Button</button>
+  <button mat-raised-button color="warn" (click)="onButtonClick(false)">Warning Button</button>
+</div>
+
+<mat-card *ngFor="let message of messages" class="message-card">
+  <div *ngIf="message === 'Success Message'">
+    <app-success-alert [message]="message"></app-success-alert>
+  </div>
+  <div *ngIf="message === 'Warning Message'">
+    <app-warning-alert [message]="message"></app-warning-alert>
+  </div>
+</mat-card>
+
+
+
+
+
