@@ -11,7 +11,7 @@ export class AppComponent {
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   messages: string[] = [];
 
-  onButtonClick(showSuccess: boolean) {
+  onButtonClick(showSuccess: boolean): void {
     let messageArray: string[] = [];
     for(let _ = 0; _ < this.selectedNumber; _++){
       messageArray.push(showSuccess ? 'Success Message' : 'Warning Message')
