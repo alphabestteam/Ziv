@@ -1,0 +1,15 @@
+.mat-container {
+    text-align: center;
+    border-style: dotted;
+  }
+
+  h3 {
+    color: #1976D2;
+  }
+
+  button {
+    margin: 0 8px;
+    color: white;
+    background-color: blue;
+
+  }
