@@ -1,0 +1,10 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+.transparent {
+    opacity: 0.5;
+}
+
+.hoverNotAllowed {
+    cursor: not-allowed;
+}
