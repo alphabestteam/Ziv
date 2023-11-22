@@ -12,7 +12,7 @@ import { MyInnerComponent } from './my-inner/my-inner.component';
   declarations: [
     AppComponent,
     MyOuterComponent,
-    MyInnerComponent
+    MyInnerComponent,
   ],
   imports: [
     BrowserModule,

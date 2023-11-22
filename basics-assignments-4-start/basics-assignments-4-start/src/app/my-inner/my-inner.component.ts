@@ -1,43 +1,14 @@
-// my-inner.component.ts
-import { Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-inner',
-  template: `
-    <div class="mat-container mat-mt-3">
-      <h3>My Inner Works!</h3>
-      <button color="primary" (click)="increaseByTen()">+1</button>
-      <button color="warn" (click)="decreaseByTen()">-1</button>
-      <h3>Inner Total: {{ innerTotal}}</h3>
-    </div>
-  `,
-  styles: [
-    `
-      .mat-container {
-        text-align: center;
-        border-style: dotted;
-      }
-
-      h3 {
-        color: #1976D2;
-      }
-
-      button {
-        margin: 0 8px;
-        color: white;
-        background-color: blue;
-
-      }
-    `,
-  ],
+  templateUrl: './my-inner.component.html',
+  styleUrls: ['./my-inner.component.css']
 })
 
-export class MyInnerComponent{
-  /*Define updateOuterTotal- the property is an instance of the eventEmitter<number> class and it
-  takes part on the updating of the outer total */
+export class MyInnerComponent {
+  @Input() innerTotal: number = 5;
   @Output() updateOuterTotal: EventEmitter<number> = new EventEmitter<number>();
-  innerTotal: number = 5;
-
 
   increaseByTen(): void {
     this.innerTotal++;
