@@ -4,8 +4,7 @@
 .transparent {
     opacity: 0.5;
 }
-  
+
 .hoverNotAllowed {
     cursor: not-allowed;
-  }
-  
+}

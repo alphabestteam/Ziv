@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   username: string = '';
 
-  resetUsername() {
-    /*Empties the username field */ 
+  resetUsername(): void {
+    /*Empties the username field */
     this.username = '';
   }
 }

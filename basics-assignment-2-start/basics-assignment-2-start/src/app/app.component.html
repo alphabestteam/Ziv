@@ -1,7 +1,7 @@
 <div>
   <h5>Username</h5>
-  <input [(ngModel)]="username"/>
+  <input [(ngModel)]="username" />
   <p>{{ username }}</p>
-  <button class="btn btn-primary" [disabled]="username === ''" (click)="resetUsername()" [class.transparent]="username === ''" [class.hoverNotAllowed]="username === ''">Reset User</button>
+  <button class="btn btn-primary" [disabled]="username === ''" (click)="resetUsername()"
+    [class.transparent]="username === ''" [class.hoverNotAllowed]="username === ''">Reset User</button>
 </div>
-
