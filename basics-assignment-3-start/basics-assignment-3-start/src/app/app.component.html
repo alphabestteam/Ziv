@@ -1,0 +1,17 @@
+<div>
+  <button (click)="displayDetails()">Display Details</button>
+  <p *ngIf="showDetails">SpongeBob SquarePants (commonly shortened to SpongeBob) is an American animated comedy
+    television series created by marine science educator and animator Stephen Hillenburg for Nickelodeon. It chronicles
+    the adventures of the title character and his aquatic friends in the fictional underwater city of Bikini Bottom.
+    Nickelodeon aired a preview for the series in the United States on May 1, 1999, after the airing of the 1999 Kids'
+    Choice Awards. The series officially premiered on July 17, 1999.</p>
+</div>
+
+<div *ngIf="buttonClicks.length > 0">
+  <div *ngFor="let click of buttonClicks; let i = index"
+    [ngStyle]="{'background-color': i >= 5 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': i >= 5 }">
+    {{ click.timestamp }}:
+    <span *ngIf="i &lt; 5">{{i+1}}</span>
+    <span *ngIf="i >= 5" class="white-text">{{i+1}}</span>
+  </div>
+</div>
