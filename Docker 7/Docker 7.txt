@@ -1,0 +1,4 @@
+docker load -i python.tar
+docker build -t app1:1 .
+
+docker run --name docker_is_the_best -p 5000:5000 app1:1

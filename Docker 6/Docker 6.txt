@@ -1,0 +1,4 @@
+Docker images are built of multiple layers. Each layer represents a set of file system changes. Docker caches each layer of an image when it’s built. Whenever changes are made to the code that rebuilds the image, Docker reuses the cached layers that haven't changed. This significantly speeds up the build process, especially when making small changes in a large application.
+The first method is the better one in my opinion. Writing out multiple commands as a one-liner with backslashes makes the command more readable and clean. 
+docker history image_name
+

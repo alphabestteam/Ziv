@@ -1,0 +1,28 @@
+docker pull tomcat:latest
+ 
+docker run -d --name mytomcat -p 8080:8080 tomcat:latest
+
+docker logs mytomcat
+
+docker stop mytomcat
+
+docker rm mytomcat
+ 
+docker run -d --name mytomcat -p 8080:8080 tomcat:latest
+
+I found out that there is an issue with the webapps folder and it must be re-enabled.
+ 
+docker exec -it mytomcat /bin/bash
+ 
+mv webapps webapps2
+ 
+mv webapps.dist/ webapps
+ 
+exit
+
+
+
+Part 2: 
+
+docker build -t tomcat .
+docker run -d --name tomcatContainer -p 8080:8080 tomcat
