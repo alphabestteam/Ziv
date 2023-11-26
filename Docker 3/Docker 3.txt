@@ -1,0 +1,5 @@
+docker load -i mysql.tar
+docker run -d --name sqlContainer -e MYSQL_ALLOW_EMPTY_PASSWORD=true -e MYSQL_DATABASE=personDB  -p 3306:3306 mysql
+
+docker stop sqlContainer
+docker rm sqlContainer

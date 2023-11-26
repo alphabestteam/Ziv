@@ -1,0 +1,4 @@
+1. docker load -i hello-world.tar
+2. docker run hello-world:latest
+3. docker start 3ab138d9d3bc
+

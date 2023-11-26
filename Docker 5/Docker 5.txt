@@ -1,0 +1,2 @@
+docker save -o mysql.tar mysql
+docker load -i mysql.tar

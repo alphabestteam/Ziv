@@ -1,0 +1,7 @@
+docker run -d --name sqlContainer -e MYSQL_ALLOW_EMPTY_PASSWORD=true -e MYSQL_DATABASE=personDB -v C:\Users\zivss\Documents\mySQL:/var/lib/mysql -p 3306:3306 mysql 
+
+docker stop sqlContainer
+docker rm sqlContainer
+docker run -d --name sqlContainer -e MYSQL_ALLOW_EMPTY_PASSWORD=true -e MYSQL_DATABASE=personDB -v C:\Users\zivss\Documents\mySQL:/var/lib/mysql -p 3306:3306 mysql 
+The volume saved the table that I’d previously created even after deleting  the container
+

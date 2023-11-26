@@ -1,0 +1,8 @@
+Docker Part I
+
+Docker is a software platform that allows developers to build and deploy their applications in a closed environment. Docker’s base unit, containers, can include any needed dependencies for the application to run anywhere. Things like libraries, system tools, and necessary code can be contained and moved to different platforms.
+A docker image is a template on which containers are built. It contains all the instructions for building the container. It can be  created in three ways: the ‘docker pull - a’ command that pulls an image from an existing registry, the ‘docker load -i- a’ command that builds an image from a .tar file, and finally the ‘docker build -a’ command that builds an image based on a dockerfile.
+A container is somewhat like a closed machine that runs on the operating system. It can contain an application and all its dependencies, making it portable and also containing it in its own environment.  A container can be created with the command ‘docker run image:tag’, which creates and starts a container from the specified image.
+The difference between an image and a container is that an image simply defines the container. It doesn’t run anything, but rather servers as instructions. 
+ An environment variable is a variable that is defined in an environment in which a process runs. Generally, such variables store system paths, configuration settings, or other information needed by various processes. 
+Volumes are the solution for storing data locally and allowing the container access to it. The host machine will have a directory that’s connected to a directory in the container. Any changes made in the local directory will influence the container’s directory and vice versa.
