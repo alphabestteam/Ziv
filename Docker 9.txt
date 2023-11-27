@@ -1,0 +1,17 @@
+docker pull busybox
+
+docker run -d --name clock busybox sh -c "while true; do date; sleep 1; done"
+
+docker ps
+
+docker logs clock
+
+docker stop clock
+
+docker rm clock
+
+docker ps -a
+
+
+5) If the container is is stopped and not deleted, an issue tith the times it prints will occur. When the container starts back up, it will start printing again from the time it was started again.
+This will cause a time gap in the printed times. 
