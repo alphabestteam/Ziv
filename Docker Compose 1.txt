@@ -1,0 +1,14 @@
+Docker compose 1
+
+image- Defines which Docker image is to be used for the service
+Container_name- Defines a custom name for the container 
+environment- Defines environment variables that are passed to the container
+port- Connects container ports to host ports, which enables external access to the services
+volumes- Mounts volumes to the container
+docker-compose up
+When trying to access the page, the site is unreachable. This is because the port mapping for MongoDB Express isn’t in the docker-compose.yml file. 
+docker compose up -d
+docker compose down
+In order to solve this, the 8081 port must be added to the MongoDB Express service. 
+Using an  .env file to store environment variables is a solution for this issue. This makes the code more readable and organizes the variables in a separate file. 
+docker compose up -d
