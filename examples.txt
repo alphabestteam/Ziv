@@ -1,0 +1,22 @@
+example JSONs for this api
+
+
+inserting doc  => {name: "ori", age: 21}
+/* when inserting, you can use any key\value you like */
+
+
+/* when deleting, you can only delete by id, and by adding the id to the url
+   for example http://localhost:3000/123456789123 */
+
+/* when inserting, you can do so by id, and by adding the id to the url
+   for example http://localhost:3000/123456789123
+   while seding with it the json of the changes you will be making */
+
+
+querying doc => {"ori":{"$regex": "^h"}}
+/* when querying, you can use this syntax for exapmle, to get all docs with a field "ori"
+   which has a value starting with the letter h */
+
+
+
+var test = show_collection("localhost", "node", "b");

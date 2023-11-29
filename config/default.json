@@ -1,0 +1,38 @@
+{
+    "express":{
+        "IP": "0.0.0.0",
+        "port": 3000
+    },
+
+    "mongo":{
+
+        "users": {
+            "dbConfig": {
+                "host": "mongodb",
+                "dbName": "node",
+                "collection": "users"
+            }
+        },
+        "tasks":{
+            "dbConfig": {
+                "host": "mongodb",
+                "dbName": "node",
+                "collection": "tasks"
+            }
+        },
+        "calendar":{
+            "dbConfig": {
+                "host": "mongodb",
+                "dbName": "node",
+                "collection": "calendar"
+            }
+        },
+        "feed":{
+            "dbConfig": {
+                "host": "mongodb",
+                "dbName": "node",
+                "collection": "feed"
+            }
+        }
+    }
+}
