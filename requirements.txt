@@ -1,0 +1,5 @@
+Flask==2.0.1
+mysql-connector-python==8.0.28
+python-dotenv==0.7.0
+Werkzeug==2.0.1
+markupsafe==2.0.1
