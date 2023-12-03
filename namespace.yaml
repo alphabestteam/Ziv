@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kube1
+
+#Run this with 'kubectl apply -f namespace.yaml'
+#The second solution is using the command 'kubectl create namespace kube1'
+
