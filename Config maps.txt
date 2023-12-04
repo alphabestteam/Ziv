@@ -1,0 +1,7 @@
+The issue with using environmental variables is that it becomes harder to maintain them the more the cluster grows. We will have to make many changes in order to 
+change the value of one variable, since they are all spread out. It would be better to use a config map in order to place all the variables in one location.
+This is also the more secure option between the two. 
+
+The secure way which I used to add is a secret object which allows me to encrypt the URL.
+The command I used is:
+echo -n "http://backend-deployment.kube1.svc.cluster.local:8000" | base64
