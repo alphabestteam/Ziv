@@ -1,0 +1,7 @@
+minikube addons enable ingress 
+kubectl apply -f node-services.yaml -n kube1
+ minikube service node-service -n kube1 --url
+
+ I decided to use nodeport but it should be noted that this isn't secure since it allows direct access to the network.
+ If possible, I would opt for ingress instead.
+
