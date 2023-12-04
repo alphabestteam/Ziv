@@ -1,0 +1,25 @@
+#The command to run this is 'kubectl apply -f frontend.yaml'
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: kube1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+        containers:
+        - name: frontend
+          image: ghcr.io/expruc/kubernetes-graduation-drill/k8s-final-drill:frontend
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: configmap
+            - secretRef:
+                name: url-secret-secret

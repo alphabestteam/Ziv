@@ -1,0 +1,6 @@
+To add more pods of the backend and frontend of the app,  the replicas field can be changed to the wanted number.
+It can also be done with the CLI command:
+'kubectl scale deployment frontend-deployment --replicas=3 -n kube1' 
+The creation of addition pods helps balance the demand for each part of the app bycreating multiple pods to handle the requests. It should be used when 
+the app experiences traffic and when improved performances are needed. For example, if there is a need to pull a lot of data
+from the database all at once, it will help if there are multiple pods of the database.
