@@ -1,0 +1,9 @@
+minikube addons enable metrics-server
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl get deployment metrics-server -n kube-system			To verify it was installed
+kubectl top pods -n kube1
+
+
+I used the last command to check how much memory is currently in use.
+Based on that I chose the limitations for the front and back. 
+It's clear that the front requires more RAM so its limit is twice as much as the back.
