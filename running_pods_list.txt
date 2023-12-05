@@ -1,0 +1,13 @@
+NAMESPACE       NAME                                        READY   STATUS    RESTARTS       AGE   IP             NODE       NOMINATED NODE   READINESS GATES
+ingress-nginx   ingress-nginx-controller-7c6974c4d8-d667n   1/1     Running   1 (97m ago)    24h   10.244.0.30    minikube   <none>           <none>
+kube-system     coredns-5dd5756b68-4w72p                    1/1     Running   1 (97m ago)    24h   10.244.0.28    minikube   <none>           <none>
+kube-system     etcd-minikube                               1/1     Running   1 (97m ago)    24h   192.168.49.2   minikube   <none>           <none>
+kube-system     kube-apiserver-minikube                     1/1     Running   1 (97m ago)    24h   192.168.49.2   minikube   <none>           <none>
+kube-system     kube-controller-manager-minikube            1/1     Running   1 (97m ago)    24h   192.168.49.2   minikube   <none>           <none>
+kube-system     kube-proxy-dcxcr                            1/1     Running   1 (97m ago)    24h   192.168.49.2   minikube   <none>           <none>
+kube-system     kube-scheduler-minikube                     1/1     Running   1 (97m ago)    24h   192.168.49.2   minikube   <none>           <none>
+kube-system     metrics-server-7c66d45ddc-8w6mf             1/1     Running   0              53m   10.244.0.38    minikube   <none>           <none>
+kube-system     metrics-server-fbb469ccc-p9cq4              0/1     Running   0              52m   10.244.0.39    minikube   <none>           <none>
+kube-system     storage-provisioner                         1/1     Running   4 (111m ago)   24h   192.168.49.2   minikube   <none>           <none>
+kube1           backend-deployment-cf69f5ff9-chjtv          1/1     Running   0              16m   10.244.0.40    minikube   <none>           <none>
+kube1           frontend-deployment-5566c9cc68-w5tzh        1/1     Running   0              15m   10.244.0.41    minikube   <none>           <none>

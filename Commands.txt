@@ -1,0 +1,2 @@
+To make this file executable, I used the command 'move all_running_pods.sh all_running_pods.bat'
+Then, I ran it with 'all_running_pods.bat'
