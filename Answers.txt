@@ -1,0 +1,6 @@
+If a service account isn't manually defined for a pod,
+it uses the default service account in the namespace it belongs to.
+Service accounts are a very much need tool that 'labels' the processes running in a pod. 
+They are used to control API access and permissions to the pods. When a pod needs to interact
+with Kubernetes or other external resources, it can use a service account to authenticate 
+and authorize its actions.

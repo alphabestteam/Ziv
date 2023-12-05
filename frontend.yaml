@@ -1,0 +1,31 @@
+#The command to run this is 'kubectl apply -f frontend.yaml'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: kube1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      serviceAccountName: service-account
+      containers:
+        - name: frontend
+          image: ghcr.io/expruc/kubernetes-gradutaion-drill/k8s-final-drill:frontend
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080" 
+            - name: BACKENDURL
+              value: "http://backend-service:8082"
+          resources:
+            limits:
+              cpu: "50m"
+              memory: "64Mi"
