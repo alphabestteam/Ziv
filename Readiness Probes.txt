@@ -1,0 +1,8 @@
+Readiness probe refers to a Kubernetes mechanism that's used to determine when a container that's in a pod is ready to start accepting traffic.
+It plays a key role in ensuring the stability of applications that are in contained environments.
+This way, Kubernetes knows when a container is prepared to handle requests.
+This feature is valuable for multiple reasons: it allows for smoother deployments and making sure that the container 
+is ready and has all of its needed dependencies before it starts accepting traffic.
+
+If the readiness probe is missing, is could cause traffic to pile Up since it's directed ata a container that isn't ready.
+This could lead to lost traffic or errors since the container won't handle the requests properly.
