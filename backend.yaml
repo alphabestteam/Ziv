@@ -15,10 +15,10 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend-container
-        image: ghcr.io/expruc/kubernetes-gradutaion-drill/k8s-final-drill:backend
-        ports:
-        - containerPort: 8080
-        env:  #As descried in the README
-          - name: PORT
-            value: "8080"
+        - name: backend
+          image: ghcr.io/expruc/kubernetes-gradutaion-drill/k8s-final-drill:backend
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
