@@ -5,6 +5,10 @@ from .models import Gambler
 from .serializers import GamblerSerializer
 import jwt, datetime
 from .decorators import get_gambler_from_token
+from rest_framework.permissions import IsAdminUser
+from rest_framework.decorators import permission_classes
+from django.shortcuts import get_object_or_404
+
 
 
 class Register(APIView):
@@ -73,3 +77,13 @@ class GamblerView(APIView):
         response.delete_cookie('jwt')
         response.data = "Gambler has been deleted"
         return response
+    
+class AddMafia(APIView):
+
+    @get_gambler_from_token
+    @permission_classes([IsAdminUser])
+    def put(self, request):
+        new_mafia = get_object_or_404(Gambler, id=request.data)
+        new_mafia.is_staff = True
+        new_mafia.save()
+        return Response({'detail': 'Gambler was added to the mafia'}, status=status.HTTP_200_OK)

@@ -8,6 +8,7 @@ urlpatterns = [
     path('profile/', views.GamblerProfile.as_view(), name="view-profile"),
     path('logout/', views.Logout.as_view(), name="logout"),
     path('editing/', views.GamblerView.as_view(), name='update-delete'),
+    path('mafia/', views.AddMafia.as_view(), name='add_mafia'),
 ]
 
     

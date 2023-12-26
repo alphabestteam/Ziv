@@ -7,7 +7,6 @@ from .serializers import GambleSerializer
 from django.db import transaction
 from Fight.models import Fight
 from Gambler.decorators import get_gambler_from_token
-from Gambler.serializers import GamblerSerializer
 
 
 class GambleView(APIView):
@@ -75,11 +74,11 @@ class GambleView(APIView):
             if gambler.account_balance >= diff_amount:
                 self.update_gambler_account(gambler, -diff_amount)
                 serialized_gamble.save()
-                return Response(serialized_gamble.data, status=status.HTTP_200_OK)
+                return Response({'detail': 'Gamble has been updated'}, status=status.HTTP_200_OK)
             else:
-                return Response('Insufficient funds', status=status.HTTP_400_BAD_REQUEST)
-
-        return Response(serialized_gamble.errors, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'error': 'Insufficient funds'}, status=status.HTTP_400_BAD_REQUEST)
+        print(serialized_gamble.errors)
+        return Response({'error': serialized_gamble.errors}, status=status.HTTP_400_BAD_REQUEST)
 
 
     @get_gambler_from_token
